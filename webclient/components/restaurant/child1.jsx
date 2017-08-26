@@ -13,6 +13,10 @@ class Child1Component extends React.Component {
             cusine: "",
             rcity: ""
         }
+        this.f1=this.f1.bind(this);
+    }
+    componentDidMount(){
+      this.f1();
     }
     changecity(e)
     {
@@ -37,12 +41,12 @@ options(){
     render() {
         return (
             <Container textAlign="center">
-                <Input focus placeholder='Search City' ref="rcity"
+                <Input focus placeholder='Search Place' ref="rcity"
                 onChange={this.changecity.bind(this)}/>
                 <Input focus placeholder='Search Cusines...' ref="cusine"
                 onChange={this.changecusine.bind(this)}/>
                 <Button primary onClick={this.f.bind(this)}>Search</Button>
-                <Button primary onClick={this.f1.bind(this)}>Near By Restaurants</Button>
+                <Button primary onClick={this.f1()}>Near By Restaurants</Button>
                 <Divider/>
             </Container>
         );

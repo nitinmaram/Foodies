@@ -1,0 +1,68 @@
+[23 08 2017 14:43:50.101] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 15:54:49.630] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 16:00:10.543] [DEBUG] - Inside user post
+[23 08 2017 16:00:11.768] [DEBUG] - Inside user post
+[23 08 2017 16:00:22.173] [DEBUG] - Inside user post
+[23 08 2017 16:07:04.426] [DEBUG] - Inside user post
+[23 08 2017 16:09:17.628] [DEBUG] - Mongoose is now disconnected..!
+[23 08 2017 16:09:36.353] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 16:09:47.580] [DEBUG] - Inside user post
+[23 08 2017 16:25:38.096] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 16:26:27.426] [DEBUG] - Mongoose is now disconnected..!
+[23 08 2017 16:26:34.907] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 16:29:07.187] [DEBUG] - Mongoose is now disconnected..!
+[23 08 2017 16:29:12.846] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 16:30:33.679] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 16:30:49.214] [DEBUG] - Mongoose is now disconnected..!
+[23 08 2017 16:30:56.852] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 16:31:41.024] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 16:32:55.336] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 16:33:14.620] [DEBUG] - Mongoose is now disconnected..!
+[23 08 2017 16:34:04.651] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 16:35:32.508] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 16:38:30.714] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 16:39:45.392] [DEBUG] - Inside user post
+[23 08 2017 16:39:50.251] [DEBUG] - Inside user post
+[23 08 2017 16:42:22.000] [DEBUG] - Inside user post
+[23 08 2017 16:53:02.360] [DEBUG] - Inside user post
+[23 08 2017 16:54:49.091] [DEBUG] - Inside user post
+[23 08 2017 16:55:01.142] [DEBUG] - Inside user post
+[23 08 2017 16:57:13.069] [DEBUG] - Inside user post
+[23 08 2017 16:59:41.274] [DEBUG] - Inside user post
+[23 08 2017 17:00:03.219] [DEBUG] - Inside user post
+[23 08 2017 17:00:12.294] [DEBUG] - Inside user post
+[23 08 2017 17:00:41.818] [DEBUG] - Inside user post
+[23 08 2017 17:01:36.396] [DEBUG] - Inside user post
+[23 08 2017 17:03:50.917] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 17:05:15.093] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 17:05:46.296] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 17:06:45.667] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 17:10:30.371] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 17:12:02.580] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 17:12:29.396] [DEBUG] - Inside user post
+[23 08 2017 17:40:14.621] [DEBUG] - Inside user post
+[23 08 2017 17:46:39.539] [DEBUG] - Inside user post
+[23 08 2017 17:47:20.399] [DEBUG] - Inside user post
+[23 08 2017 17:48:38.067] [DEBUG] - Inside user post
+[23 08 2017 17:50:01.366] [DEBUG] - Inside user post
+[23 08 2017 17:50:02.350] [DEBUG] - Inside user post
+[23 08 2017 17:50:02.854] [DEBUG] - Inside user post
+[23 08 2017 17:50:03.042] [DEBUG] - Inside user post
+[23 08 2017 17:50:25.301] [DEBUG] - Inside user post
+[23 08 2017 17:51:14.130] [DEBUG] - Inside user post
+[23 08 2017 17:52:14.585] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 17:52:34.383] [DEBUG] - Inside user post
+[23 08 2017 17:53:27.461] [DEBUG] - Inside user post
+[23 08 2017 17:56:40.080] [DEBUG] - Inside user post
+[23 08 2017 18:23:52.605] [DEBUG] - Inside user post
+[23 08 2017 18:24:15.171] [DEBUG] - Inside user post
+[23 08 2017 18:24:22.978] [DEBUG] - Inside user post
+[23 08 2017 18:25:17.894] [DEBUG] - Inside user post
+[23 08 2017 18:27:02.651] [DEBUG] - Inside user post
+[23 08 2017 18:28:20.987] [DEBUG] - Inside user post
+[23 08 2017 18:43:29.635] [DEBUG] - Inside get
+[23 08 2017 18:46:51.423] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 18:47:33.196] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 18:53:19.293] [DEBUG] - Mongoose is now disconnected..!
+[23 08 2017 19:08:23.598] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[23 08 2017 19:12:19.778] [DEBUG] - Mongoose is now disconnected..!

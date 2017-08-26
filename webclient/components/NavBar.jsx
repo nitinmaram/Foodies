@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Input, Menu, Segment, Button} from 'semantic-ui-react'
+import {Input, Menu, Segment, Button, Header, Icon} from 'semantic-ui-react'
 var {Link} = require('react-router');
 
 class MenuExamplePointing extends Component {
@@ -28,12 +28,17 @@ class MenuExamplePointing extends Component {
 
        return (
            <div>
-               <Menu pointing>
+               <Menu secondary unstackable>
                    <Link to='/home'>
-                       <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick}/>
+                       <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick}>
+                       <Header as='h5' icon color='orange' textAlign='center'><Icon name='cocktail'/>Foodies</Header>
+                       </Menu.Item>
                    </Link>
+                   <Menu.Item/>
                    <Link to='/fav'>
-                       <Menu.Item name='favourites' active={activeItem === 'messages'} onClick={this.handleItemClick}/>
+                       <Menu.Item name='favourites' active={activeItem === 'favourites'} onClick={this.handleItemClick}>
+                       <Header as='h5'icon color='red' textAlign='center'><Icon name='heart'/>Favourites</Header>
+                       </Menu.Item>
                    </Link>
                    <Menu.Menu position='right'>
                        <Menu.Item>

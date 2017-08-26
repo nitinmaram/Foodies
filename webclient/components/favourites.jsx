@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Card, Icon, Image, Button } from 'semantic-ui-react';
+import { Card, Icon, Image, Button, Container } from 'semantic-ui-react';
 import MyCard from './restaurant/child3.jsx';
 
 class MyFavourites extends React.Component{
@@ -83,13 +83,12 @@ class MyFavourites extends React.Component{
 					ratings={item.resRating} comment={item.comments} distance={item.distance}
           fav = "fav" remove={methodRef}
 					update={updateRef}/>
-
 			</div>
 			);
 		});
 
 		return (
-			<div>
+			<div style={{marginLeft: '50px'}}>
 			<Card.Group itemsPerRow={2}>
 				{cards}
 			</Card.Group>

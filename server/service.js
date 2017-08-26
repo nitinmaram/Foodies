@@ -102,8 +102,8 @@ function setupWebpack(app) {
 }
 
 function setupMongooseConnections() {
- mongoose.connect(config.MONGO_URL);
-
+  var db=config.MONGO_URL;
+mongoose.connect(db,{ useMongoClient: true,db: {authSource: 'admin'}});
  mongoose.connection.on('connected', function() {
    logger.debug('Mongoose is now connected to ', config.MONGO_URL);
  });

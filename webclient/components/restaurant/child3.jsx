@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button} from 'semantic-ui-react'
-import { Card, Icon, Image, Input} from 'semantic-ui-react'
-class Cards extends React.Component {
+import { Card, Icon, Image, Input, Container} from 'semantic-ui-react'
+class Child3 extends React.Component {
     constructor() {
 
         super();
@@ -125,9 +125,9 @@ update1() {
         )
       }
     }
-    Cards.propTypes = {
+    Child3.propTypes = {
       id: React.PropTypes.object,
       name: React.PropTypes.object,
 
 }
-    module.exports=Cards;
+    module.exports=Child3;
