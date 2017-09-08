@@ -11,7 +11,8 @@ router.post('/add', function(req, res) {
    logger.debug("Inside user post");
    let newUser = new User({
      username : req.body.username,
-     password : req.body.password
+     password : req.body.password,
+     name: req.body.name
    });
 
    newUser.save().then((doc)=>{

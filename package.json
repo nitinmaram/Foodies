@@ -54,6 +54,7 @@
     "pm2": "^2.6.1",
     "rc-pagination": "^1.6.1",
     "react": "^15.3.2",
+    "react-cookie": "^2.0.8",
     "react-dom": "^15.3.2",
     "react-google-maps": "^7.2.0",
     "react-grid-system": "^1.5.2",

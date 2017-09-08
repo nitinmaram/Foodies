@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Card, Icon, Image, Button, Container } from 'semantic-ui-react';
 import MyCard from './restaurant/child3.jsx';
+const ReactToastr = require('react-toastr');
+const {ToastContainer} = ReactToastr;
+const ToastMessageFactory = React.createFactory(ReactToastr.ToastMessage.animation);
+let {browserHistory} = require('react-router');
 
 class MyFavourites extends React.Component{
   constructor() {
@@ -16,17 +20,36 @@ class MyFavourites extends React.Component{
   }
 
   getFavourites() {
+    console.log(this.props.location.pathname);
+    if(document.cookie=='')
+    {
+      this.refs.container.error('Please Sign Up/Log In', '', {
+        timeOut: 1000,
+        extendedTimeOut: 10000
+      });
+      setTimeout(function() {
+       browserHistory.push('/home'); }.bind(this), 1000);
+    }
+    else{
     $.ajax({
 			   url:"/restaurants/",
-			 type:'GET',
+			 type:'POST',
+       data: {user: document.cookie},
 			 beforeSend: function (request)
 									 {
 											 request.setRequestHeader("user-key", "46a2eab73fc526624bab1d5a65c8001a");
 									 },
 			success: function(data)
 			{
-				console.log('Successfully got JSON from Zomato' + data);
-				console.log(JSON.stringify(data,undefined,2));
+        if(data.length==0)
+        {
+          this.refs.container.error('No Favourites, Please add Restaurants', '', {
+            timeOut: 2000,
+            extendedTimeOut: 10000
+          });
+          setTimeout(function() {
+           browserHistory.push('/home'); }.bind(this), 2000);
+        }
         this.setState({
           objArray: data
         });
@@ -37,6 +60,7 @@ class MyFavourites extends React.Component{
 				console.log(err);
 			}.bind(this)
 		});
+  }
   }
 
 
@@ -92,6 +116,7 @@ class MyFavourites extends React.Component{
 			<Card.Group itemsPerRow={2}>
 				{cards}
 			</Card.Group>
+      <ToastContainer ref='container' toastMessageFactory={ToastMessageFactory} className='toast-top-center'/>
 		</div>
 		);
 	}

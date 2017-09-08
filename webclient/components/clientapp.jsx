@@ -10,12 +10,24 @@ class MainComponent extends React.Component {
             lat: 0,
             lon: 0
         };
-    }
+      }
+      componentDidMount(){
+        this.f1();
+      }
+      f1() {
+        navigator.geolocation.getCurrentPosition(this.success.bind(this),this.options.bind(this));
+      }
+      success (p){
+  this.getResturantByLoc(p.coords.latitude,p.coords.longitude);
+  }
+  options(){
+           enableHighAccuracy: true
+  }
     render()
     {
         return (
             <div >
-                <Child1Component.Child1 handle={this.getResturantFromQuery.bind(this)} locHandle={this.getResturantByLoc.bind(this)}/>
+                <Child1Component.Child1 handle={this.getResturantFromQuery.bind(this)} f1={this.f1.bind(this)}/>
                 <Child1Component.Child2 name={this.state.jsonarray} lat={this.state.lat} lon={this.state.lon}/>
             </div>
         );
@@ -23,7 +35,6 @@ class MainComponent extends React.Component {
     getResturantFromQuery(rcity,cusine)
     {
         $.ajax({
-
             url: "https://developers.zomato.com/api/v2.1/search?q="+rcity+"&cuisines="+cusine,
             type: 'GET',
             beforeSend: function(request) {

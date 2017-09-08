@@ -1,6 +1,9 @@
 import React from 'react'
 import {Button} from 'semantic-ui-react'
 import { Card, Icon, Image, Input, Container} from 'semantic-ui-react'
+const ReactToastr = require('react-toastr');
+const {ToastContainer} = ReactToastr;
+const ToastMessageFactory = React.createFactory(ReactToastr.ToastMessage.animation);
 class Child3 extends React.Component {
     constructor() {
 
@@ -8,8 +11,14 @@ class Child3 extends React.Component {
         this.sendData = this.sendData.bind(this);
         this.state={addButton:'Add',updateButton:'Update'}
       }
-
   sendData(){
+    if(document.cookie==''){
+      this.refs.container.error('Please Sign Up/Log In', '', {
+        timeOut: 1000,
+        extendedTimeOut: 10000
+      });
+    }
+    else{
    let resdata = {
       _id : this.props.id,
      imageurl : this.props.image,
@@ -18,7 +27,8 @@ class Child3 extends React.Component {
      resAddress : this.props.location,
      resRating : this.props.ratings,
      comments : this.props.comment,
-     distance : this.props.distance
+     distance : this.props.distance,
+     user: document.cookie
    }
    console.log(JSON.stringify(resdata,undefined,2));
    $.ajax({
@@ -34,6 +44,7 @@ class Child3 extends React.Component {
        }.bind(this)
    });
  }
+}
    deleteData(){
     // f = this.props.remove;
    console.log(this.props.location);
@@ -121,6 +132,7 @@ update1() {
     {but}
     </div>
   </Card.Content>
+  <ToastContainer ref='container' toastMessageFactory={ToastMessageFactory} className='toast-top-center'/>
   </Card>
         )
       }

@@ -12,9 +12,8 @@ let schema = new mongoose.Schema({
  resAddress: {type:String},
  resRating: String,
  comments: String,
- distance: Number
-
-
+ distance: Number,
+ user: String
 });
 
 let restaurant = mongoose.model('restaurant', schema);

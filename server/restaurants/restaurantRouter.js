@@ -34,9 +34,9 @@ router.delete('/delete', function(req, res) {
     });
 });
 
-router.get('/', function(req, res) {
-  logger.debug('Inside get');
-  Restaurant.find().then((docs)=>{
+router.post('/', function(req, res) {
+  console.log(req.body.user);
+  Restaurant.find({user: req.body.user}).then((docs)=>{
     res.send(docs);
   },(err)=>{
     res.send(err);

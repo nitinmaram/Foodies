@@ -9,14 +9,21 @@ class Login extends React.Component {
   constructor() {
       super();
       this.state={username:'',password:'',
+      name: '', confirmPassword: '',
       isLoggedIn:'',
       heading: '',
       reg: false,
-      log: false
+      log: false,
+      formControl: 'login',
+      passStatus: '',
+      passColor: 'red'
     };
     this.loginAlert = this.loginAlert.bind(this);
     this.registerAlert = this.registerAlert.bind(this);
     this.registerSuccessAlert = this.registerSuccessAlert.bind(this);
+  }
+  handleName(e){
+    this.setState({name:e.target.value})
   }
 handleUserName(e)
 {
@@ -26,6 +33,20 @@ handlePassword(e)
 {
 this.setState({password:e.target.value});
 }
+handleConfirmPassword(e)
+{
+this.setState({confirmPassword:e.target.value});
+setInterval(function(){
+if(this.state.password==this.state.confirmPassword)
+{
+  this.setState({passStatus:'Passwords match',passColor:'green'})
+}
+else
+{
+  this.setState({passStatus:'Passwords does not match',passColor:'red'})
+}
+}.bind(this), 1000);
+}
 loginAlert() {
   this.refs.container.error('Invalid User Name/ Password', '', {
     timeOut: 1000,
@@ -33,16 +54,28 @@ loginAlert() {
   });
 }
 registerAlert() {
+  if(this.state.password != this.state.confirmPassword){
+    this.refs.container.error('Password Mismatch', '', {
+      timeOut: 1000,
+      extendedTimeOut: 10000
+    });
+  }
+  else{
   this.refs.container.error('Provide valid details', '', {
     timeOut: 1000,
     extendedTimeOut: 10000
   });
+}
 }
 registerSuccessAlert() {
   this.refs.container.success('Successfully Registered', '', {
     timeOut: 3000,
     extendedTimeOut: 1000
   });
+}
+withoutSignUp(){
+  document.cookie=this.state.username
+  browserHistory.push('/home');
 }
 LoginUser(){
   let context = this
@@ -57,8 +90,10 @@ $.ajax({
  success: function(res){
 
    console.log(res.responseText);
-   if(res.responseText == "authenticated")
+   if(res.responseText == "authenticated"){
    browserHistory.push('/home');
+   document.cookie = context.state.username
+ }
    else
    context.loginAlert();
  },
@@ -74,20 +109,23 @@ registerUser(){
   if(this.state.reg)
   {
     let context = this
-    if(this.state.username !='' && this.state.password != ''){
+    if(this.state.username !='' && this.state.password != '' && this.state.password == this.state.confirmPassword){
 $.ajax({
  url:"/users/add",
  type: 'POST',
  datatype: 'JSON',
  data:{
    'username':this.state.username,
-   'password':this.state.password
+   'password':this.state.password,
+   'name': this.state.name
  },
  success: function(res){
    context.setState({heading: '', reg: false, log: false
  });
+ document.cookie = context.state.username
   context.registerSuccessAlert();
-  setTimeout(function() { browserHistory.push('/home'); }.bind(this), 2000);
+    setTimeout(function() {
+     browserHistory.push('/home'); }.bind(this), 2000);
  },
  error: function(err){
    this.setState({heading: '', reg: false, log: false});
@@ -103,6 +141,27 @@ else{
 
 }
 render(){
+  var formControl='';
+  if(this.state.heading==''){
+  formControl=(  <Form>
+   <Form.Group widths={2}>
+     <Form.Input hidden placeholder='User Name' onChange={this.handleUserName.bind(this)} />
+     <Form.Input placeholder='Password' onChange={this.handlePassword.bind(this)} type="password" />
+   </Form.Group>
+   </Form>);
+ }
+ else{
+formControl=(   <Form>
+<Form.Group widths={2}>
+  <Form.Input placeholder='Name' onChange={this.handleName.bind(this)} />
+  <Form.Input placeholder='User Name' onChange={this.handleUserName.bind(this)} />
+  </Form.Group>
+  <Form.Input placeholder='Password' onChange={this.handlePassword.bind(this)} type="password" />
+  <Form.Input placeholder='Confirm Password' onChange={this.handleConfirmPassword.bind(this)} type="password" />
+  <span style={{color:this.state.passColor}}>{this.state.passStatus}</span>
+</Form>
+);
+ }
  return(
    <div>
  <Container>
@@ -111,14 +170,11 @@ render(){
   <Header as='h1' icon color='orange'><Icon name='cocktail' circular />Foodies</Header>
   <Header as='h3' color='grey'>{this.state.heading}</Header>
   <br/>
-      <Form>
-   <Form.Group widths={2}>
-     <Form.Input placeholder='User Name' onChange={this.handleUserName.bind(this)} />
-     <Form.Input placeholder='Password' onChange={this.handlePassword.bind(this)} type="password" />
-   </Form.Group>
-   </Form>
+    {formControl}
+    <br/>
    <Button disabled ={this.state.log} onClick={this.LoginUser.bind(this)}>Login</Button>
    <Button onClick={this.registerUser.bind(this)}>Register</Button>
+   <h5 onClick={this.withoutSignUp.bind(this)} style={{cursor:'pointer', color:'orange'}}>Continue without signup ?</h5>
    </Grid.Column>
  </Grid>
  <ToastContainer ref='container' toastMessageFactory={ToastMessageFactory} className='toast-top-center'/>

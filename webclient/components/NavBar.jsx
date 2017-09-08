@@ -1,14 +1,13 @@
 import React, {Component} from 'react'
 import {Input, Menu, Segment, Button, Header, Icon} from 'semantic-ui-react'
-var {Link} = require('react-router');
-
+let {browserHistory, Link} = require('react-router');
 class MenuExamplePointing extends Component {
    state = {
        activeItem: 'home'
    }
 
    handleItemClick = (e, {name}) => this.setState({activeItem: name})
-   onClick(){
+   logOut(){
 
     $.ajax({
         url: '/users/logout',
@@ -22,13 +21,22 @@ class MenuExamplePointing extends Component {
         }.bind(this)
     });
   }
-
+  reDirect(){
+    browserHistory.push('/')
+  }
    render() {
        const {activeItem} = this.state
-
+       var logBut = ''
+       if(document.cookie =='')
+       {
+       logBut = (<Button  size='large' color='blue' onClick={this.reDirect.bind(this)}>Sign In/Log In</Button>);
+     }
+       else{
+       logBut = (<Button  size='large' color='red' onClick={this.logOut.bind(this)}>Logout</Button>);
+     }
        return (
            <div>
-               <Menu secondary unstackable>
+               <Menu secondary>
                    <Link to='/home'>
                        <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick}>
                        <Header as='h5' icon color='orange' textAlign='center'><Icon name='cocktail'/>Foodies</Header>
@@ -42,7 +50,7 @@ class MenuExamplePointing extends Component {
                    </Link>
                    <Menu.Menu position='right'>
                        <Menu.Item>
-                           <Button  size='large' color='red' onClick={this.onClick.bind(this)}>Logout</Button>
+                          {logBut}
                        </Menu.Item>
                    </Menu.Menu>
                </Menu>

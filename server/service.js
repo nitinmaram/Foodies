@@ -103,10 +103,10 @@ function setupWebpack(app) {
 
 function setupMongooseConnections() {
   var db=config.MONGO_URL;
-mongoose.connect(db,{ useMongoClient: true,db: {authSource: 'admin'}});
- mongoose.connection.on('connected', function() {
-   logger.debug('Mongoose is now connected to ', config.MONGO_URL);
- });
+  mongoose.connect(db,{ useMongoClient: true,db: {authSource: 'admin'}});
+   mongoose.connection.on('connected', function() {
+     logger.debug('Mongoose is now connected to ', config.MONGO_URL);
+   });
 
  mongoose.connection.on('error', function(err) {
    logger.error('Error in Mongoose connection: ', err);
