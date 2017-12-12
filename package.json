@@ -63,7 +63,8 @@
     "react-toastr": "^2.9.3",
     "request": "^2.79.0",
     "semantic-ui-react": "^0.63.5",
-    "superagent": "^2.3.0"
+    "superagent": "^2.3.0",
+    "supertest": "^3.0.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
