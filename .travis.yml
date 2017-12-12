@@ -9,3 +9,7 @@ addons:
   sauce_connect:
     username: "nitinmaram"
     access_key: "171ed1b9-b417-4677-8bd9-91c645094e25"
+  sonarcloud:
+    organization: "nitinmaram-github" # the key of the org you chose at step #3
+    token:
+      secure: dd25c5534a1d501de293cf70bdf8e18233e1998c # encrypted value of your token
