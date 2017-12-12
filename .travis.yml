@@ -4,3 +4,8 @@ sudo: required
 language: node_js
 node_js:
   - "stable"
+
+addons:
+  sauce_connect:
+    username: "nitinmaram"
+    access_key: "171ed1b9-b417-4677-8bd9-91c645094e25"
