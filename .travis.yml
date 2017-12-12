@@ -13,6 +13,6 @@ addons:
     organization: "nitinmaram-github" # the key of the org you chose at step #3
     token:
       secure: dd25c5534a1d501de293cf70bdf8e18233e1998c # encrypted value of your token
-      script:
+script:
   # other script steps might be done before running the actual analysis
-  - sonar-scanner
+    - sonar-scanner
