@@ -3,50 +3,22 @@ assert = require ("chai").assert,
 supertest = require("supertest"),
 app = require("../bin/www");
 fs = require('fs')
-var describe = require('chai').describe;
+// var describe = require('chai').describe;
 var url = supertest("http://localhost:8080");
+describe('Array', function() {
+  describe('#indexOf()', function() {
+    it('Hook Test', function() {
+      fs.readFile('./test/data.txt', 'utf8', function (err,data) {
+        if (err) {
+          return console.log(err);
+        }
+        console.log(data);
+        assert.equal('admin@gmail.com', data);
+      });
 
-fs.readFile('./test/data.txt', 'utf8', function (err,data) {
-  if (err) {
-    return console.log(err);
-  }
-  console.log(data);
-  assert.equal('admin@gmail.com', data);
+    });
+  });
 });
-// describe('Array', function() {
-//   describe('#indexOf()', function() {
-//     it('Hook Test', function() {
-//       fs.readFile('./test/data.txt', 'utf8', function (err,data) {
-//         if (err) {
-//           return console.log(err);
-//         }
-//         console.log(data);
-//         assert.equal('admin@gmail.com', data);
-//       });
-//       function readFiles('./webclient', onFileContent, onError) {
-//   fs.readdir('./webclient', function(err, filenames) {
-//     if (err) {
-//       onError(err);
-//       return;
-//     }
-//     filenames.forEach(function(filename) {
-//       fs.readFile('./webclient/' + filename, 'utf-8', function(err, content) {
-//         if (err) {
-//           onError(err);
-//           return;
-//         }
-//         if(content.includes("nitin@gmail.com"))
-//         {
-//           assert.equal(true, true);
-//         }
-//         // onFileContent(filename, content);
-//       });
-//     });
-//   });
-// }
-//     });
-//   });
-// });
 // describe.only("Testing calculator POST route", function(err){
 //   it("should add all the value of object", function(done){
 //    url
