@@ -107,6 +107,7 @@
     "precommit-hook": "latest"
   },
   "pre-commit": [
+    "test",
     "emailHook"
   ]
 }
