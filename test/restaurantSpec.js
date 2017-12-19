@@ -2,13 +2,20 @@ const should = require("chai").should(),
 assert = require ("chai").assert,
 supertest = require("supertest"),
 app = require("../bin/www");
+fs = require('fs')
 
 var url = supertest("http://localhost:8080");
 
 describe('Array', function() {
   describe('#indexOf()', function() {
     it('should return -1 when the value is not present', function() {
-      assert.equal('maramnitin@gmail.com', 'fkewfk@gmail.com');
+      fs.readFile('./test/data.txt', 'utf8', function (err,data) {
+        if (err) {
+          return console.log(err);
+        }
+        console.log(data);
+      });
+      assert.equal('hai@gmail.com', data);
     });
   });
 });
