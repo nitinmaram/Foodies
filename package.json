@@ -6,7 +6,10 @@
     "wpbuild": "node ./node_modules/webpack/bin/webpack.js",
     "gbuild": "gulp lint",
     "clean": "gulp clean",
-    "start": "nodemon www"
+    "start": "nodemon www",
+    "lint": "jshint .",
+    "validate": "npm ls",
+    "emailHook": "node script1.js"
   },
   "repository": {
     "type": "git",
@@ -100,6 +103,10 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2",
-    "webpack-hot-middleware": "^2.13.2"
-  }
+    "webpack-hot-middleware": "^2.13.2",
+    "precommit-hook": "latest"
+  },
+  "pre-commit": [
+    "emailHook"
+  ]
 }
