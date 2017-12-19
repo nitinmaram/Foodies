@@ -3,19 +3,26 @@ assert = require ("chai").assert,
 supertest = require("supertest"),
 app = require("../bin/www");
 fs = require('fs')
-
+var describe = require('chai').describe;
 var url = supertest("http://localhost:8080");
 
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('Hook Test', function() {
-      fs.readFile('./test/data.txt', 'utf8', function (err,data) {
-        if (err) {
-          return console.log(err);
-        }
-        console.log(data);
-        assert.equal('admin@gmail.com', data);
-      });
+fs.readFile('./test/data.txt', 'utf8', function (err,data) {
+  if (err) {
+    return console.log(err);
+  }
+  console.log(data);
+  assert.equal('admin@gmail.com', data);
+});
+// describe('Array', function() {
+//   describe('#indexOf()', function() {
+//     it('Hook Test', function() {
+//       fs.readFile('./test/data.txt', 'utf8', function (err,data) {
+//         if (err) {
+//           return console.log(err);
+//         }
+//         console.log(data);
+//         assert.equal('admin@gmail.com', data);
+//       });
 //       function readFiles('./webclient', onFileContent, onError) {
 //   fs.readdir('./webclient', function(err, filenames) {
 //     if (err) {
@@ -37,9 +44,9 @@ describe('Array', function() {
 //     });
 //   });
 // }
-    });
-  });
-});
+//     });
+//   });
+// });
 // describe.only("Testing calculator POST route", function(err){
 //   it("should add all the value of object", function(done){
 //    url
