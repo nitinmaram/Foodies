@@ -9,7 +9,8 @@
     "start": "nodemon www",
     "lint": "jshint .",
     "validate": "npm ls",
-    "emailHook": "node script1.js"
+    "emailHook": "node script1.js",
+    "foo": "echo \"fooo\" && exit 0",
   },
   "repository": {
     "type": "git",
@@ -107,7 +108,6 @@
     "precommit-hook": "latest"
   },
   "pre-commit": [
-    "test",
-    "emailHook"
+    "foo"
   ]
 }
