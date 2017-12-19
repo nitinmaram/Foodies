@@ -13,7 +13,7 @@ describe('Array', function() {
           return console.log(err);
         }
         console.log(data);
-        assert.equal('admin@gmail.com', data);
+        assert.equal('admin@gmail.com', 'admin1@gmail.com');
       });
 
     });
