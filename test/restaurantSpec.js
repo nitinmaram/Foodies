@@ -8,14 +8,35 @@ var url = supertest("http://localhost:8080");
 
 describe('Array', function() {
   describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
+    it('Hook Test', function() {
       fs.readFile('./test/data.txt', 'utf8', function (err,data) {
         if (err) {
           return console.log(err);
         }
         console.log(data);
+        assert.equal('admin@gmail.com', data);
       });
-      assert.equal('hai@gmail.com', data);
+//       function readFiles('./webclient', onFileContent, onError) {
+//   fs.readdir('./webclient', function(err, filenames) {
+//     if (err) {
+//       onError(err);
+//       return;
+//     }
+//     filenames.forEach(function(filename) {
+//       fs.readFile('./webclient/' + filename, 'utf-8', function(err, content) {
+//         if (err) {
+//           onError(err);
+//           return;
+//         }
+//         if(content.includes("nitin@gmail.com"))
+//         {
+//           assert.equal(true, true);
+//         }
+//         // onFileContent(filename, content);
+//       });
+//     });
+//   });
+// }
     });
   });
 });
