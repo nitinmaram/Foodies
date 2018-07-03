@@ -33,7 +33,7 @@ const appConfig = {
   production: extend(production, defaults)
 };
 
-process.stdout.write('\nZynla configuring for environment: ' + process.env.NODE_ENV);
+process.stdout.write('\nFoodies configuring for environment: ' + process.env.NODE_ENV);
 process.stdout.write('\nconfig settings: ' + JSON.stringify(appConfig[(process.env
   .NODE_ENV || 'development')]), null, '\t');
 

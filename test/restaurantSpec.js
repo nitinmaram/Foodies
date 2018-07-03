@@ -15,7 +15,7 @@ var url = supertest("http://localhost:8080");
       //   console.log(data);
       //   assert.equal('admin@gmail.com', 'admin@gmail.com');
       // });
-      assert.equal('admin@gmail.com', 'admin@gmail.com');
+      // assert.equal('admin@gmail.com', 'admin@gmail.com');
 //     });
 //   });
 // });

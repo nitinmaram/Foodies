@@ -1,0 +1,4 @@
+[25 06 2018 14:59:47.969] [DEBUG] - Mongoose is now connected to  mongodb://127.0.0.1:27017/Jojo
+[25 06 2018 15:02:34.275] [DEBUG] - Inside user post
+[25 06 2018 15:08:45.973] [DEBUG] - Inside restaurant add post
+[25 06 2018 15:08:53.661] [DEBUG] - Inside restaurant delete post

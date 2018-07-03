@@ -18,6 +18,7 @@ class MainComponent extends React.Component {
         navigator.geolocation.getCurrentPosition(this.success.bind(this),this.options.bind(this));
       }
       success (p){
+        console.log(p.coords);
   this.getResturantByLoc(p.coords.latitude,p.coords.longitude);
   }
   options(){
@@ -58,7 +59,7 @@ class MainComponent extends React.Component {
       });
         $.ajax({
 
-            url: "https://developers.zomato.com/api/v2.1/search?lat="+lat+"&lon="+lon,
+            url: "https://developers.zomato.com/api/v2.1/search?lat="+lat+"&lon="+lon+"&sort=real_distance",
             type: 'GET',
             beforeSend: function(request) {
                 request.setRequestHeader("user-key", "e7d66af9fb8c94906a2e8ed0f4c3c203");

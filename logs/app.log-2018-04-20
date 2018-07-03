@@ -1,0 +1,36 @@
+[20 04 2018 12:42:23.137] [DEBUG] - Mongoose is now disconnected..!
+[20 04 2018 12:42:23.161] [ERROR] - Error in Mongoose connection:  { MongoError: failed to connect to server [127.0.0.1:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+    at Pool.<anonymous> (E:\Workspace\Foodies\node_modules\mongoose\node_modules\mongodb-core\lib\topologies\server.js:336:35)
+    at emitOne (events.js:116:13)
+    at Pool.emit (events.js:211:7)
+    at Connection.<anonymous> (E:\Workspace\Foodies\node_modules\mongoose\node_modules\mongodb-core\lib\connection\pool.js:280:12)
+    at Object.onceWrapper (events.js:317:30)
+    at emitTwo (events.js:126:13)
+    at Connection.emit (events.js:214:7)
+    at Socket.<anonymous> (E:\Workspace\Foodies\node_modules\mongoose\node_modules\mongodb-core\lib\connection\connection.js:189:49)
+    at Object.onceWrapper (events.js:315:30)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at emitErrorNT (internal/streams/destroy.js:64:8)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  name: 'MongoError',
+  message: 'failed to connect to server [127.0.0.1:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]' }
+[20 04 2018 14:31:51.840] [DEBUG] - Mongoose is now disconnected..!
+[20 04 2018 14:31:51.842] [ERROR] - Error in Mongoose connection:  { MongoError: failed to connect to server [127.0.0.1:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+    at Pool.<anonymous> (E:\Workspace\Foodies\node_modules\mongoose\node_modules\mongodb-core\lib\topologies\server.js:336:35)
+    at emitOne (events.js:116:13)
+    at Pool.emit (events.js:211:7)
+    at Connection.<anonymous> (E:\Workspace\Foodies\node_modules\mongoose\node_modules\mongodb-core\lib\connection\pool.js:280:12)
+    at Object.onceWrapper (events.js:317:30)
+    at emitTwo (events.js:126:13)
+    at Connection.emit (events.js:214:7)
+    at Socket.<anonymous> (E:\Workspace\Foodies\node_modules\mongoose\node_modules\mongodb-core\lib\connection\connection.js:189:49)
+    at Object.onceWrapper (events.js:315:30)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at emitErrorNT (internal/streams/destroy.js:64:8)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  name: 'MongoError',
+  message: 'failed to connect to server [127.0.0.1:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]' }

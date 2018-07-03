@@ -1,7 +1,7 @@
-# Zynla
+# Foodies
 Relevance through collaborative search
 
-Zynla is a collaborative search engine, so that you can search as a team to access relevant documents
+Foodies is a Restaurant Finder App, so that you can search Restaurants near by and filter them according to your taste
 
 ## Supports
 
@@ -23,5 +23,5 @@ To build the app
 	$ npm run build
 
 To run the app
-
+	$ npm start
 	$ npm run serve

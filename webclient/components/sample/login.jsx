@@ -1,5 +1,5 @@
 let React = require('react');
-import { Button, Form, Header, Grid, Icon, Container} from 'semantic-ui-react';
+import { Button, Form, Header, Grid, Icon, Container, Image} from 'semantic-ui-react';
 const ReactToastr = require('react-toastr');
 const {ToastContainer} = ReactToastr;
 const ToastMessageFactory = React.createFactory(ReactToastr.ToastMessage.animation);
@@ -35,17 +35,20 @@ this.setState({password:e.target.value});
 }
 handleConfirmPassword(e)
 {
-this.setState({confirmPassword:e.target.value});
-setInterval(function(){
-if(this.state.password==this.state.confirmPassword)
-{
-  this.setState({passStatus:'Passwords match',passColor:'green'})
-}
-else
-{
-  this.setState({passStatus:'Passwords does not match',passColor:'red'})
-}
-}.bind(this), 1000);
+  const { name, value } = e.target;
+
+  this.setState({
+      confirmPassword: value
+    }, function() {
+      if(this.state.password==this.state.confirmPassword)
+      {
+        this.setState({passStatus:'Passwords match',passColor:'green'})
+      }
+      else
+      {
+        this.setState({passStatus:'Passwords does not match',passColor:'red'})
+      }
+    })
 }
 loginAlert() {
   this.refs.container.error('Invalid User Name/ Password', '', {
@@ -167,8 +170,7 @@ formControl=(   <Form>
  <Container>
  <Grid centered columns={2}>
   <Grid.Column>
-  <Header as='h1' icon color='orange'><Icon name='cocktail' circular />Foodies</Header>
-  <Header as='h3' color='grey'>{this.state.heading}</Header>
+  <Image src = {require('./FoodiesLogo.png')}/>
   <br/>
     {formControl}
     <br/>

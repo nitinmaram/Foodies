@@ -27,7 +27,12 @@ module.exports = {
                 test: /\.css$/,
                 loader:"style-loader!css-loader",
                 include: [/flexboxgrid/,/react-select/]
-              }]
+              },
+                {
+                  test: /\.(jpeg|png|gif|svg|webm)$/i,
+                  loaders: ['file-loader']
+                }
+              ]
  },
  watch:true,
  resolve: {
